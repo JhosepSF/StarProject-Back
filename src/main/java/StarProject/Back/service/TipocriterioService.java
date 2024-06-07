@@ -18,16 +18,16 @@ public class TipocriterioService
     public void nuevoTipocriterio(TipocriterioRequest tipocriterio)
     {
         Tipocriterio criterio = new Tipocriterio();
-        criterio.setCriteryname(tipocriterio.getCriteryname());
+        criterio.setNombrecriterio(tipocriterio.getNombrecriterio());
 
-        if (tipocriterio.getSubcriteryid() != null && tipocriterio.getSubcriteryid() != 0)
+        if (tipocriterio.getCriteriosuperior() != null && tipocriterio.getCriteriosuperior() != 0)
         {
-            Tipocriterio subcritery = tipocriterioRepo.findById(tipocriterio.getSubcriteryid()).get();
-            criterio.setSubcriteryid(subcritery);
+            Tipocriterio criteriosuperior = tipocriterioRepo.findById(tipocriterio.getCriteriosuperior()).get();
+            criterio.setCriteriosuperior(criteriosuperior);
         }
         else
         {
-            criterio.setSubcriteryid(null);
+            criterio.setCriteriosuperior(null);
         }
         
         tipocriterioRepo.save(criterio);
@@ -48,7 +48,7 @@ public class TipocriterioService
     	Tipocriterio tipocriterio = tipocriterioRepo.findById(idcriterio)
                 .orElseThrow(()->new RuntimeException("No se encontro el criterio"));
     	
-    	List<Tipocriterio> criterios = tipocriterioRepo.findBySubcriteryid(tipocriterio);
+    	List<Tipocriterio> criterios = tipocriterioRepo.findByCriteriosuperior(tipocriterio);
     	
     	return criterios;
     }

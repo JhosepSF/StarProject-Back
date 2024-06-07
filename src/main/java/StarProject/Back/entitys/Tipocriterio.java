@@ -13,36 +13,36 @@ public class Tipocriterio
 {
 	@Id
 	@GeneratedValue
-	Integer mainid;
+	Integer idcriterio;
 	
 	@Column
-	String criteryname;
+	String nombrecriterio;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subcriteryid")
-    Tipocriterio subcriteryid;
+    Tipocriterio criteriosuperior;
 
-	public Integer getMainid() {
-		return mainid;
+	public Integer getIdcriterio() {
+		return idcriterio;
 	}
 
-	public void setMainid(Integer mainid) {
-		this.mainid = mainid;
+	public void setIdcriterio(Integer idcriterio) {
+		this.idcriterio = idcriterio;
 	}
 
-	public String getCriteryname() {
-		return criteryname;
+	public String getNombrecriterio() {
+		return nombrecriterio;
 	}
 
-	public void setCriteryname(String criteryname) {
-		this.criteryname = criteryname;
+	public void setNombrecriterio(String nombrecriterio) {
+		this.nombrecriterio = nombrecriterio;
 	}
 
-	public Tipocriterio getSubcriteryid() {
-		return subcriteryid;
+	public Tipocriterio getCriteriosuperior() {
+		return criteriosuperior;
 	}
 
-	public void setSubcriteryid(Tipocriterio subcriteryid) {
-		this.subcriteryid = subcriteryid;
+	public void setCriteriosuperior(Tipocriterio criteriosuperior) {
+		this.criteriosuperior = criteriosuperior;
 	}
 }

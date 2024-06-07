@@ -22,6 +22,15 @@ public class Documento
 	LocalDate fecha;
 	Integer duracion;
 	LocalDate vencimiento;
+	String valorlegal;
+	
+	@ManyToOne (fetch = FetchType.LAZY)
+	@JoinColumn (name= "idvalidacion")
+	Validacion idvalidacion;
+	
+	@ManyToOne (fetch = FetchType.LAZY)
+	@JoinColumn (name= "idusuario")
+	Usuario idusuario;
 	
 	@ManyToOne (fetch = FetchType.LAZY)
 	@JoinColumn (name= "idtipocriterio")
@@ -78,5 +87,17 @@ public class Documento
 	}
 	public void setPdf(byte[] pdf) {
 		this.pdf = pdf;
+	}
+	public String getValorlegal() {
+		return valorlegal;
+	}
+	public void setValorlegal(String valorlegal) {
+		this.valorlegal = valorlegal;
+	}
+	public Validacion getIdvalidacion() {
+		return idvalidacion;
+	}
+	public void setIdvalidacion(Validacion idvalidacion) {
+		this.idvalidacion = idvalidacion;
 	}
 }

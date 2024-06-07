@@ -12,7 +12,9 @@ public class DocumentosRequest
 	String vencimiento;
 	Integer idtipocriterio;
 	MultipartFile pdf;
-		
+	String valorlegal;
+	Integer idvalidacion;
+	
 	public String getNrodoc() {
 		return nrodoc;
 	}
@@ -60,5 +62,17 @@ public class DocumentosRequest
 	}
 	public void setPdf(MultipartFile pdf) {
 		this.pdf = pdf;
+	}
+	public String getValorlegal() {
+		return valorlegal;
+	}
+	public void setValorlegal(String valorlegal) {
+		this.valorlegal = valorlegal;
+	}
+	public Integer getIdvalidacion() {
+		return idvalidacion;
+	}
+	public void setIdvalidacion(Integer idvalidacion) {
+		this.idvalidacion = idvalidacion;
 	}
 }

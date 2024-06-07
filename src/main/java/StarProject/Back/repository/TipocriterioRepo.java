@@ -8,5 +8,5 @@ import StarProject.Back.entitys.Tipocriterio;
 
 public interface TipocriterioRepo extends JpaRepository<Tipocriterio, Integer>
 {
-	List<Tipocriterio> findBySubcriteryid(Tipocriterio criterio);
+	List<Tipocriterio> findByCriteriosuperior(Tipocriterio criterio);
 }

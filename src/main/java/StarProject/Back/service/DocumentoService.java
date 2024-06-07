@@ -65,7 +65,7 @@ public class DocumentoService
     	    documentoDTO.setFecha(documento.getFecha().toString());
     	    documentoDTO.setDuracion(documento.getDuracion());
     	    documentoDTO.setVencimiento(documento.getVencimiento().toString()); 
-    	    documentoDTO.setTipocriterio(documento.getIdtipocriterio().getCriteryname());
+    	    documentoDTO.setTipocriterio(documento.getIdtipocriterio().getNombrecriterio());
     	    documentosdto.add(documentoDTO);
     	}
     	return documentosdto;
@@ -83,7 +83,7 @@ public class DocumentoService
 	    documentoDTO.setFecha(documento.getFecha().toString());
 	    documentoDTO.setDuracion(documento.getDuracion());
 	    documentoDTO.setVencimiento(documento.getVencimiento().toString()); 
-	    documentoDTO.setTipocriterio(documento.getIdtipocriterio().getCriteryname());
+	    documentoDTO.setTipocriterio(documento.getIdtipocriterio().getNombrecriterio());
 	    
 	    return documentoDTO;
     }
@@ -111,7 +111,7 @@ public class DocumentoService
     	    documentoDTO.setFecha(documento.getFecha().toString());
     	    documentoDTO.setDuracion(documento.getDuracion());
     	    documentoDTO.setVencimiento(documento.getVencimiento().toString());  
-    	    documentoDTO.setTipocriterio(documento.getIdtipocriterio().getCriteryname());
+    	    documentoDTO.setTipocriterio(documento.getIdtipocriterio().getNombrecriterio());
     	    documentosdto.add(documentoDTO);
     	}
     	return documentosdto;
@@ -122,7 +122,7 @@ public class DocumentoService
         Tipocriterio tipocriterio = criterio.findById(idcriterio)
                             .orElseThrow(()->new RuntimeException("No se encontro el criterio"));
         
-        List<Tipocriterio> subcriterios = criterio.findBySubcriteryid(tipocriterio);
+        List<Tipocriterio> subcriterios = criterio.findByCriteriosuperior(tipocriterio);
         List<Documento> documentos = new ArrayList<>();
         List<DocumentoDTO> documentosdto = new ArrayList<>();
         
@@ -139,7 +139,7 @@ public class DocumentoService
         	    documentoDTO.setFecha(documento.getFecha().toString());
         	    documentoDTO.setDuracion(documento.getDuracion());
         	    documentoDTO.setVencimiento(documento.getVencimiento().toString());  
-        	    documentoDTO.setTipocriterio(documento.getIdtipocriterio().getCriteryname());
+        	    documentoDTO.setTipocriterio(documento.getIdtipocriterio().getNombrecriterio());
         	    documentosdto.add(documentoDTO);
         	}
         }

@@ -2,19 +2,19 @@ package StarProject.Back.request;
 
 public class TipocriterioRequest 
 {
-	String criteryname;
-	Integer subcriteryid;
-	
-	public String getCriteryname() {
-		return criteryname;
+	String nombrecriterio;
+    Integer criteriosuperior;
+    
+	public String getNombrecriterio() {
+		return nombrecriterio;
 	}
-	public void setCriteryname(String criteryname) {
-		this.criteryname = criteryname;
+	public void setNombrecriterio(String nombrecriterio) {
+		this.nombrecriterio = nombrecriterio;
 	}
-	public Integer getSubcriteryid() {
-		return subcriteryid;
+	public Integer getCriteriosuperior() {
+		return criteriosuperior;
 	}
-	public void setSubcriteryid(Integer subcriteryid) {
-		this.subcriteryid = subcriteryid;
+	public void setCriteriosuperior(Integer criteriosuperior) {
+		this.criteriosuperior = criteriosuperior;
 	}
 }
